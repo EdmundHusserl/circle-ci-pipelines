@@ -21,5 +21,12 @@
   "bugs": {
     "url": "https://github.com/EdmundHusserl/circle-ci-pipelines/issues"
   },
-  "homepage": "https://github.com/EdmundHusserl/circle-ci-pipelines#readme"
+  "homepage": "https://github.com/EdmundHusserl/circle-ci-pipelines#readme",
+  "dependencies": {
+    "cy2": "^1.2.1",
+    "cypress": "^7.4.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.2.4"
+  }
 }
