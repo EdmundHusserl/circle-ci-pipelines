@@ -1,0 +1,25 @@
+{
+  "name": "pipelines",
+  "version": "1.0.0",
+  "description": "just messing around with pipelines",
+  "main": "index.ts",
+  "scripts": {
+    "test": "npx cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EdmundHusserl/circle-ci-pipelines.git"
+  },
+  "keywords": [
+    "circle-ci",
+    "cypress",
+    "test",
+    "pipelines"
+  ],
+  "author": "Jorge Pemjean-Letelier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EdmundHusserl/circle-ci-pipelines/issues"
+  },
+  "homepage": "https://github.com/EdmundHusserl/circle-ci-pipelines#readme"
+}
