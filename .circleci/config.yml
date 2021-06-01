@@ -19,7 +19,7 @@ jobs:
             - mochawesome.json  
   print-results:
     docker:
-      - image: circleci/alpine
+      - image: alpine:latest
     steps:
       - attach_workspace:
           at: ~/
