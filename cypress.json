@@ -1,4 +1,11 @@
 {
     "integrationFolder": "cypress/integration",
-    "testFiles": "**_spec.ts"
+    "testFiles": "**_spec.ts",
+    "reporter": "mochawesome",
+    "reporterOptions": {
+    "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+    }
 }
