@@ -44,7 +44,7 @@ jobs:
       - image: alpine:latest
     
     steps:
-    - attach_to_workspace:
+    - attach_workspace:
         at: /tmp/workspace
     - run:
         name: print results
