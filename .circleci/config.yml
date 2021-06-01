@@ -19,7 +19,7 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths:
-            - mochawesome.json  
+            - cypress/integration/*.json 
   print-results:
     docker:
       - image: alpine:latest
@@ -40,5 +40,8 @@ commands:
 workflows:
   run_cypress_tests_and_print_results:
     jobs:
-      - build-and-test
       - print-results
+        requires:
+          - build-and-test
+      - build-and-test
+      
