@@ -35,7 +35,7 @@ jobs:
           command: |
             npm run delete:reports && npm test && npm run create:reports 
       - persist_to_workspace:
-          root: /tmp/workspace
+          root: /results
           paths:
             - cypress/integration/results/*
   
@@ -45,7 +45,7 @@ jobs:
     
     steps:
     - attach_workspace:
-        at: /tmp/workspace
+        at: /results
     - run:
         name: print results
         command: |
