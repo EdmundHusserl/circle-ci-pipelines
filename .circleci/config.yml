@@ -1,4 +1,7 @@
 version: 2.1
+orbs:
+  node: circleci/node@4.0.1
+
 jobs:
   build-and-test:  
     docker:
@@ -39,5 +42,3 @@ workflows:
     jobs:
       - build-and-test
       - print-results
-          requires:
-            - build-and-test
