@@ -34,6 +34,7 @@ jobs:
           name: Run tests
           command: |
             npm run delete:reports && npm test && npm run create:reports 
+      
       - persist_to_workspace:
           root: ~/
           paths:
@@ -44,12 +45,12 @@ jobs:
       - image: circleci/alpine@latest
     
     steps:
-    - attach_workspace:
-        at: ~/
-    - run:
-        name: print results
-        command: |
-          for file in $(ls *.json); do cat $file; done
+      - attach_workspace:
+          at: ~/
+      - run:
+          name: print results
+          command: |
+            for file in $(ls *.json); do cat $file; done
   
 
 workflows:
@@ -57,7 +58,7 @@ workflows:
   # Inside the workflow, you provide the jobs you want to run, e.g this workflow runs the build-and-test job above.
   # CircleCI will run this workflow on every commit.
   # For more details on extending your workflow, see the configuration docs: https://circleci.com/docs/2.0/configuration-reference/#workflows
-  run_cypress_tests:
+  run_cypress_tests_and_print_results:
     jobs:
       - build-and-test
       - print-results
