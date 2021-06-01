@@ -8,10 +8,10 @@ jobs:
     steps:
       - checkout
       - node/install-packages
+      - print_pipeline_id
       - run:
           name: Run tests
           command: |
-            print_pipeline_id
             npm run delete:reports && npm test && npm run create:reports 
       - persist_to_workspace:
           root: ~/
