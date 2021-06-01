@@ -1,32 +1,37 @@
 {
-  "name": "pipelines",
-  "version": "1.0.0",
-  "description": "just messing around with pipelines",
-  "main": "index.ts",
-  "scripts": {
-    "test": "npx cypress run"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/EdmundHusserl/circle-ci-pipelines.git"
-  },
-  "keywords": [
-    "circle-ci",
-    "cypress",
-    "test",
-    "pipelines"
-  ],
-  "author": "Jorge Pemjean-Letelier",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/EdmundHusserl/circle-ci-pipelines/issues"
-  },
-  "homepage": "https://github.com/EdmundHusserl/circle-ci-pipelines#readme",
-  "dependencies": {
-    "cy2": "^1.2.1",
-    "cypress": "^7.4.0"
-  },
-  "devDependencies": {
-    "typescript": "^4.2.4"
-  }
+    "name": "pipelines",
+    "version": "1.0.0",
+    "description": "just messing around with pipelines",
+    "main": "index.ts",
+    "scripts": {
+        "test": "npx cypress run",
+        "delete:reports": "rm cypress/results/* || true",
+        "create:reports": "npx mochawesome-merge 'cypress/results/*.json' > mochawesome.json && npx marge mochawesome.json" 
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/EdmundHusserl/circle-ci-pipelines.git"
+    },
+    "keywords": [
+        "circle-ci",
+        "cypress",
+        "test",
+        "pipelines"
+    ],
+    "author": "Jorge Pemjean-Letelier",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/EdmundHusserl/circle-ci-pipelines/issues"
+    },
+    "homepage": "https://github.com/EdmundHusserl/circle-ci-pipelines#readme",
+    "dependencies": {
+        "cy2": "^1.2.1",
+        "cypress": "^7.4.0"
+    },
+    "devDependencies": {
+        "mochawesome": "^6.2.2",
+        "mochawesome-merge": "^4.2.0",
+        "mochawesome-report-generator": "^5.2.0",
+        "typescript": "^4.2.4"
+    }
 }
