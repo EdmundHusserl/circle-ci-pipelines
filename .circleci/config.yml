@@ -40,8 +40,8 @@ commands:
 workflows:
   run_cypress_tests_and_print_results:
     jobs:
-      - print-results
-        requires:
-          - build-and-test
       - build-and-test
+      - print-results:
+          requires:
+            - build-and-test
       
