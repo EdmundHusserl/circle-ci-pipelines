@@ -29,8 +29,8 @@ jobs:
       - run:
           name: print results
           command: |
-            for file in /tmp/*.json; do cat /tmp/${file}; done
-
+            ls
+            
 commands:
   print_pipeline_id:
     description: prints pipeline ID
