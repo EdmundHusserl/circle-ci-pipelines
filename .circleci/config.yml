@@ -17,19 +17,18 @@ jobs:
           command: |
             npm run delete:reports && npm test && npm run create:reports 
       - persist_to_workspace:
-          root:  .
+          root:   ~/
           paths:
-            - ./cypress/results/mochawesome.json 
+            - /root/project/mochawesome-report/* 
   print-results:
     docker:
       - image: alpine:latest 
     steps:
       - attach_workspace:
-          at: /tmp
+          at: ~/
       - run:
           name: print results
           command: |
-            cd /tmp
             ls
             
 commands:
