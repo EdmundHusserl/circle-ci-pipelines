@@ -17,19 +17,19 @@ jobs:
           command: |
             npm run delete:reports && npm test && npm run create:reports 
       - persist_to_workspace:
-          root: ~/
+          root:  .
           paths:
-            - ./cypress/results/*.json 
+            - ./cypress/results 
   print-results:
     docker:
-      - image: alpine:latest
+      - image: alpine:latest 
     steps:
       - attach_workspace:
-          at: ~/
+          at: /tmp
       - run:
           name: print results
           command: |
-            for file in $(ls *.json); do cat $file; done
+            for file in /tmp/*.json; do cat /tmp/${file}; done
 
 commands:
   print_pipeline_id:
